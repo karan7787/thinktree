@@ -1,0 +1,32 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Tent Prediction{% endblock %}
+{% block navbar %}
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+        <a class="navbar-brand" href="#">Cost Prediction</a>
+        </div>
+    </nav>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <form method="POST" action="">
+            <div class="row">
+                <div class="col-md-12">
+                <h3>To determine the cost of transportation, please enter the following:</h3>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-md-8">
+            <p>{{ form.DATE.label }} {{ wtf.form_field(form.DATE) }}</p>
+            <p>{{ form.DISTANCE.label }} {{ wtf.form_field(form.DISTANCE) }}</p>
+            <p>{{ form.DRIVER.label }} {{ wtf.form_field(form.DRIVER) }}</p>
+            <p>{{ form.matric_tone.label }} {{ wtf.form_field(form.matric_tone) }}</p><p>{{ form.cost_per_matric.label }} {{ wtf.form_field(form.cost_per_tone) }}</p>
+            <p>{{ form.no_of_travellers.label }} {{ wtf.form_field(form.no_of_travellers) }}</p>
+            <br>
+            {{ form.submit() }}
+            {{ form.hidden_tag() }}
+        </div>
+    </div>
+</div>
+{% endblock %}
